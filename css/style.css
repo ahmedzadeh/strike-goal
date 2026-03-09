@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #1a1a1a;
+    color: #fff;
+    overflow: hidden;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameCanvas {
+    background: #2d5016;
+    border: 2px solid #444;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#top-bar {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    pointer-events: auto;
+}
+
+.ui-element {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.label {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.ui-element span:not(.label) {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.ui-button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.ui-button:hover {
+    background: #45a049;
+}
+
+#power-indicator {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#power-indicator.active {
+    opacity: 1;
+}
+
+#power-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, #4CAF50, #FFC107, #F44336);
+    transition: width 0.1s;
+}
+
+#aim-indicator {
+    position: absolute;
+    pointer-events: none;
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: #333;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+.star-rating {
+    font-size: 40px;
+    margin: 20px 0;
+}
+
+.star {
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+
+.star.active {
+    filter: grayscale(0%);
+}
